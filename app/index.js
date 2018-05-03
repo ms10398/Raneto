@@ -46,7 +46,7 @@ function initialize (config) {
   var router = express.Router();
 
   // Setup Port
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 80);
 
   // set locale as date and time format
   moment.locale(config.locale);
@@ -129,9 +129,9 @@ function initialize (config) {
   }
 
   // Handle Errors
-  app.use(error_handler);
-  app.use(config.prefix_url || '/', router);
 
+  app.use(config.prefix_url || '/', router);
+  app.use(error_handler);
   return app;
 
 }

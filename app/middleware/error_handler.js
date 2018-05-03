@@ -7,7 +7,7 @@ function handler (config) {
 
     var status = err.status || 500;
 
-    res.status(status);
+    // res.status(status);
     res.render('error', {
       config     : config,
       status     : err.status,
